@@ -123,8 +123,7 @@ const App = () => {
   return (
     <div>
       <div>
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/notes">notes</Link>
+        <Link style={padding} to="/">Recepies</Link>
         <Link style={padding} to="/users">users</Link>
         {user
           ? <em>{user} logged in</em>
@@ -136,9 +135,6 @@ const App = () => {
         <Route path="/notes/:id">
           <Note note={note} />
         </Route>
-        <Route path="/notes">
-          <Notes notes={notes} />
-        </Route>
         <Route path="/users">
           {user ? <Users /> : <Redirect to="/login" />}
         </Route>
@@ -146,7 +142,7 @@ const App = () => {
           <Login onLogin={login} />
         </Route>
         <Route path="/">
-          <Home />
+          <Notes notes={notes} />
         </Route>
       </Switch>
       <div>
