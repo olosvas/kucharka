@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Cube = ({ recipe1 }) => {
-  //const recipe = recipe1
+  const recipe = recipe1
 
-  console.log('recipe passed into Cube is - ', recipe1)
+  console.log('recipe passed into Cube is - ', recipe)
 
   return(
     <div>
-      <div>{recipe1.name}</div>
-      <div>{recipe1.author}</div>
+      <div>{recipe.name}</div>
+      <div>{recipe.author}</div>
     </div>
   )
 }
