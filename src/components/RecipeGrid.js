@@ -1,18 +1,12 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Cube from './Cube'
 
 const RecipeGrid = () => {
-  const recipes = useSelector(state => state)
+  const recipes = useSelector(state => state.recipes)
   console.log('recipes from RecipeGrid is - ', recipes)
 
-  /*
-  const match = useRouteMatch('/notes/:id')
-  const note = match
-    ? notes.find(note => note.id === Number(match.params.id))
-    : null
-    */
 
   /*
   {recipes.map(note =>
@@ -26,7 +20,15 @@ const RecipeGrid = () => {
     <div>
       <h2>Notes</h2>
       <ul>
-        <Cube recipe1={recipes.recipe1}/>
+        {recipes.map(recipe =>
+          <div key={recipe.id}>
+            <li>
+              <Link to={`/recipes/${recipe.id}`}>
+                <Cube recipe1={recipe}/>
+              </Link>
+            </li>
+          </div>
+        )}
       </ul>
     </div>
   )

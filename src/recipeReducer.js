@@ -1,73 +1,81 @@
-const initialRecipes = {
-  recipe1: {
+const initialRecipes = [
+  {
     id: 1,
     name: 'recipe1Name',
     author:'author1',
-    steps: {
-      step1: {
+    steps: [
+      {
+        id:1,
         title:'step1title',
         image:'www.link.com',
         text:'postup'
       },
-      step2:{
+      {
+        id:2,
         title:'step2title',
         image:'www.link.com',
         text:'postup'
       }
-    }
+    ]
   },
-  recipe2: {
+  {
     id: 2,
     name: 'recipe2Name',
     author:'author2',
-    steps: {
-      step1: {
+    steps: [
+      {
+        id:1,
         title:'step1title',
         image:'www.link.com',
         text:'postup'
       },
-      step2:{
+      {
+        id:2,
         title:'step2title',
         image:'www.link.com',
         text:'postup'
       }
-    }
+    ]
   },
-  recipe3: {
+  {
     id: 3,
     name: 'recipe3Name',
     author:'author3',
-    steps: {
-      step1: {
+    steps: [
+      {
+        id:1,
         title:'step1title',
         image:'www.link.com',
         text:'postup'
       },
-      step2:{
+      {
+        id:2,
         title:'step2title',
         image:'www.link.com',
         text:'postup'
       }
-    }
+    ]
   },
-  recipe4: {
+  {
     id: 4,
     name: 'recipe4Name',
     author:'author4',
-    steps: {
-      step1: {
+    steps: [
+      {
+        id:1,
         title:'step1title',
         image:'www.link.com',
         text:'postup'
       },
-      step2:{
+      {
+        id:2,
         title:'step2title',
         image:'www.link.com',
         text:'postup'
       }
-    }
+    ]
   }
-}
+]
 
 
 
