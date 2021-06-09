@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import RecipeGrid from './components/RecipeGrid'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
+import RecipeFull from './components/RecipeFull'
 
 //comment from Adam branch
 
@@ -13,10 +14,15 @@ import {
   Link,
   Redirect,
   useHistory,
+  useRouteMatch
 } from 'react-router-dom'
 
-import { createStore } from 'redux'
-import reducer from './reducer'
+import { createStore, combineReducers } from 'redux'
+import recipeReducer from './recipeReducer'
+
+const reducer = combineReducers({
+  recipes: recipeReducer
+})
 
 const store = createStore(reducer)
 
@@ -70,15 +76,18 @@ const Login = (props) => {
   )
 }
 
-/*
-<Route path="/notes/:id">
-  <Note note={note} />
-</Route>
-*/
+
+
 
 const App = () => {
   const [user, setUser] = useState(null)
 
+  const recipes = useSelector(state => state.recipes)
+
+  const match = useRouteMatch('/recipes/:id')
+  const recipe = match
+    ? recipes.find(recipe => recipe.id === Number(match.params.id))
+    : null
 
 
   const login = (user) => {
@@ -88,6 +97,7 @@ const App = () => {
   const padding = {
     padding: 5
   }
+
 
 
 
@@ -108,6 +118,9 @@ const App = () => {
         </Route>
         <Route path="/login">
           <Login onLogin={login} />
+        </Route>
+        <Route path="/recipes/:id">
+          <RecipeFull recipe={recipe} />
         </Route>
         <Route path="/">
           <RecipeGrid />
