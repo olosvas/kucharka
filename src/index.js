@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-//olocom
-//cototjeje
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,12 +11,7 @@ import {
   useHistory,
 } from 'react-router-dom'
 
-const Home = () => (
-  <div>
-    <h2>TKTL notes app</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-  </div>
-)
+
 
 const Note = ({ note }) => {
   return (
@@ -121,8 +115,8 @@ const App = () => {
   return (
     <div>
       <div>
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/notes">notes</Link>
+        {/* <Link style={padding} to="/">home</Link> */}
+        <Link style={padding} to="/">notes</Link>
         <Link style={padding} to="/users">users</Link>
         {user
           ? <em>{user} logged in</em>
@@ -134,7 +128,7 @@ const App = () => {
         <Route path="/notes/:id">
           <Note note={note} />
         </Route>
-        <Route path="/notes">
+        <Route path="/">
           <Notes notes={notes} />
         </Route>
         <Route path="/users">
@@ -144,7 +138,6 @@ const App = () => {
           <Login onLogin={login} />
         </Route>
         <Route path="/">
-          <Home />
         </Route>
       </Switch>
       <div>
