@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import RecipeGrid from './components/RecipeGrid'
+import { Provider } from 'react-redux'
 
 //comment from Adam branch
 
@@ -10,10 +12,16 @@ import {
   Route,
   Link,
   Redirect,
-  useRouteMatch,
   useHistory,
 } from 'react-router-dom'
 
+import { createStore } from 'redux'
+import reducer from './reducer'
+
+const store = createStore(reducer)
+
+
+/*
 const Note = ({ note }) => {
   return (
     <div>
@@ -23,19 +31,8 @@ const Note = ({ note }) => {
     </div>
   )
 }
+*/
 
-const Notes = ({ notes }) => (
-  <div>
-    <h2>Notes</h2>
-    <ul>
-      {notes.map(note =>
-        <li key={note.id}>
-          <Link to={`/notes/${note.id}`}>{note.content}</Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)
 
 const Users = () => (
   <div>
@@ -73,31 +70,15 @@ const Login = (props) => {
   )
 }
 
-const App = () => {
-  /* eslint-disable no-unused-vars */
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      content: 'HTML is easy',
-      important: true,
-      user: 'Matti Luukkainen'
-    },
-    {
-      id: 2,
-      content: 'Browser can execute only Javascript',
-      important: false,
-      user: 'Matti Luukkainen'
-    },
-    {
-      id: 3,
-      content: 'Most important methods of HTTP-protocol are GET and POST',
-      important: true,
-      user: 'Arto Hellas'
-    }
-  ])
+/*
+<Route path="/notes/:id">
+  <Note note={note} />
+</Route>
+*/
 
+const App = () => {
   const [user, setUser] = useState(null)
-  /* eslint-enable no-unused-vars */
+
 
 
   const login = (user) => {
@@ -108,10 +89,7 @@ const App = () => {
     padding: 5
   }
 
-  const match = useRouteMatch('/notes/:id')
-  const note = match
-    ? notes.find(note => note.id === Number(match.params.id))
-    : null
+
 
   return (
     <div>
@@ -125,9 +103,6 @@ const App = () => {
       </div>
 
       <Switch>
-        <Route path="/notes/:id">
-          <Note note={note} />
-        </Route>
         <Route path="/users">
           {user ? <Users /> : <Redirect to="/login" />}
         </Route>
@@ -135,7 +110,7 @@ const App = () => {
           <Login onLogin={login} />
         </Route>
         <Route path="/">
-          <Notes notes={notes} />
+          <RecipeGrid />
         </Route>
       </Switch>
       <div>
@@ -147,8 +122,10 @@ const App = () => {
 }
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )
