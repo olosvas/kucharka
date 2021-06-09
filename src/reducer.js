@@ -32,6 +32,40 @@ const initialRecipes = {
         text:'postup'
       }
     }
+  },
+  recipe3: {
+    id: 3,
+    name: 'recipe3Name',
+    author:'author3',
+    steps: {
+      step1: {
+        title:'step1title',
+        image:'www.link.com',
+        text:'postup'
+      },
+      step2:{
+        title:'step2title',
+        image:'www.link.com',
+        text:'postup'
+      }
+    }
+  },
+  recipe4: {
+    id: 4,
+    name: 'recipe4Name',
+    author:'author4',
+    steps: {
+      step1: {
+        title:'step1title',
+        image:'www.link.com',
+        text:'postup'
+      },
+      step2:{
+        title:'step2title',
+        image:'www.link.com',
+        text:'postup'
+      }
+    }
   }
 }
 
