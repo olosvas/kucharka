@@ -2,25 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Cube from './Cube'
+import FilterComponent from './FilterComponent'
 
 const RecipeGrid = () => {
   const recipes = useSelector(state => state.recipes)
+  const filter = useSelector(state => state.filter)
+
   console.log('recipes from RecipeGrid is - ', recipes)
+  console.log('filter value from FlterComponent is - ', filter)
 
+  const filteredRecepies = recipes.filter(recipe =>
+    recipe.name.toLowerCase().includes(filter.toLowerCase())
+  )
 
-  /*
-  {recipes.map(note =>
-    <li key={note.id}>
-      <Link to={`/notes/${note.id}`}>{note.content}</Link>
-    </li>
-  )}
-  */
+  console.log('filteredRecepies is - ',filteredRecepies)
 
   return (
     <div>
-      <h2>Notes</h2>
+      <h2>Recipes</h2>
+      <div><FilterComponent/></div>
       <ul>
-        {recipes.map(recipe =>
+        {filteredRecepies.map(recipe =>
           <div key={recipe.id}>
             <li>
               <Link to={`/recipes/${recipe.id}`}>

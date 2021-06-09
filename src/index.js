@@ -18,10 +18,12 @@ import {
 } from 'react-router-dom'
 
 import { createStore, combineReducers } from 'redux'
-import recipeReducer from './recipeReducer'
+import recipeReducer from './reducers/recipeReducer'
+import filterReducer from './reducers/filterReducer'
 
 const reducer = combineReducers({
-  recipes: recipeReducer
+  recipes: recipeReducer,
+  filter: filterReducer
 })
 
 const store = createStore(reducer)

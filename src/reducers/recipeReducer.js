@@ -1,7 +1,7 @@
 const initialRecipes = [
   {
     id: 1,
-    name: 'recipe1Name',
+    name: 'jeden',
     author:'author1',
     steps: [
       {
@@ -20,7 +20,7 @@ const initialRecipes = [
   },
   {
     id: 2,
-    name: 'recipe2Name',
+    name: 'dva',
     author:'author2',
     steps: [
       {
@@ -39,7 +39,7 @@ const initialRecipes = [
   },
   {
     id: 3,
-    name: 'recipe3Name',
+    name: 'tri',
     author:'author3',
     steps: [
       {
@@ -58,7 +58,7 @@ const initialRecipes = [
   },
   {
     id: 4,
-    name: 'recipe4Name',
+    name: 'styri',
     author:'author4',
     steps: [
       {
@@ -82,7 +82,7 @@ const initialRecipes = [
 
 
 const recipeReducer = (state = initialRecipes, action) => {
-  console.log(action)
+  //console.log(action)
   switch (action.type) {
   case 'GOOD':
     return {  ...state,
