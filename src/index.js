@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import RecipeGrid from './components/RecipeGrid'
 import { Provider, useSelector } from 'react-redux'
 import RecipeFull from './components/RecipeFull'
-
+/*eslint linebreak-style: ["error", "windows"]*/
 //comment from Adam branch
 
 //cototjeje

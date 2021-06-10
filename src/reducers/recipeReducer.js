@@ -1,4 +1,4 @@
-const initialRecipes = [
+/*eslint linebreak-style: ["error", "windows"]*/const initialRecipes = [
   {
     id: 1,
     name: 'jeden',

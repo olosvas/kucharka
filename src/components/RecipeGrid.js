@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Cube from './Cube'
 import FilterComponent from './FilterComponent'
+/*eslint linebreak-style: ["error", "windows"]*/
 
 const RecipeGrid = () => {
   const recipes = useSelector(state => state.recipes)
