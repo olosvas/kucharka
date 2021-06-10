@@ -1,18 +1,35 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import RecipeGrid from './components/RecipeGrid'
+import { Provider, useSelector } from 'react-redux'
+import RecipeFull from './components/RecipeFull'
+/*eslint linebreak-style: ["error", "windows"]*/
+//comment from Adam branch
 
+//cototjeje
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   Redirect,
-  useRouteMatch,
   useHistory,
+  useRouteMatch
 } from 'react-router-dom'
 
+import { createStore, combineReducers } from 'redux'
+import recipeReducer from './reducers/recipeReducer'
+import filterReducer from './reducers/filterReducer'
+
+const reducer = combineReducers({
+  recipes: recipeReducer,
+  filter: filterReducer
+})
+
+const store = createStore(reducer)
 
 
+/*
 const Note = ({ note }) => {
   return (
     <div>
@@ -22,19 +39,8 @@ const Note = ({ note }) => {
     </div>
   )
 }
+*/
 
-const Notes = ({ notes }) => (
-  <div>
-    <h2>Notes</h2>
-    <ul>
-      {notes.map(note =>
-        <li key={note.id}>
-          <Link to={`/notes/${note.id}`}>{note.content}</Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)
 
 const Users = () => (
   <div>
@@ -72,31 +78,18 @@ const Login = (props) => {
   )
 }
 
-const App = () => {
-  /* eslint-disable no-unused-vars */
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      content: 'HTML is easy',
-      important: true,
-      user: 'Matti Luukkainen'
-    },
-    {
-      id: 2,
-      content: 'Browser can execute only Javascript',
-      important: false,
-      user: 'Matti Luukkainen'
-    },
-    {
-      id: 3,
-      content: 'Most important methods of HTTP-protocol are GET and POST',
-      important: true,
-      user: 'Arto Hellas'
-    }
-  ])
 
+
+
+const App = () => {
   const [user, setUser] = useState(null)
-  /* eslint-enable no-unused-vars */
+
+  const recipes = useSelector(state => state.recipes)
+
+  const match = useRouteMatch('/recipes/:id')
+  const recipe = match
+    ? recipes.find(recipe => recipe.id === Number(match.params.id))
+    : null
 
 
   const login = (user) => {
@@ -107,16 +100,13 @@ const App = () => {
     padding: 5
   }
 
-  const match = useRouteMatch('/notes/:id')
-  const note = match
-    ? notes.find(note => note.id === Number(match.params.id))
-    : null
+
+
 
   return (
     <div>
       <div>
-        {/* <Link style={padding} to="/">home</Link> */}
-        <Link style={padding} to="/">notes</Link>
+        <Link style={padding} to="/">Recepies</Link>
         <Link style={padding} to="/users">users</Link>
         {user
           ? <em>{user} logged in</em>
@@ -125,19 +115,17 @@ const App = () => {
       </div>
 
       <Switch>
-        <Route path="/notes/:id">
-          <Note note={note} />
-        </Route>
-        <Route path="/">
-          <Notes notes={notes} />
-        </Route>
         <Route path="/users">
           {user ? <Users /> : <Redirect to="/login" />}
         </Route>
         <Route path="/login">
           <Login onLogin={login} />
         </Route>
+        <Route path="/recipes/:id">
+          <RecipeFull recipe={recipe} />
+        </Route>
         <Route path="/">
+          <RecipeGrid />
         </Route>
       </Switch>
       <div>
@@ -149,8 +137,10 @@ const App = () => {
 }
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )
