@@ -1,4 +1,5 @@
-/*eslint linebreak-style: ["error", "windows"]*/const initialRecipes = [
+/*eslint linebreak-style: ["error", "windows"]*/
+const initialRecipes = [
   {
     id: 1,
     name: 'jeden',
@@ -82,7 +83,7 @@
 
 
 const recipeReducer = (state = initialRecipes, action) => {
-  //console.log(action)
+  console.log("action is:" ,action)
   switch (action.type) {
   case 'GOOD':
     return {  ...state,
