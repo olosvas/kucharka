@@ -3,10 +3,12 @@ import {useHistory} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import loginService from '../services/loginService'
+import noteService from '../services/noteService'
+import { setUser } from '../reducers/userReducer'
 
-/*
-const handleSubmit = async (event) => {
-  event.preventDefault()
+const handleSubmit = async ({ username, password }) => {
+
   console.log('logging in with', username, password)
 
   try {
@@ -15,12 +17,10 @@ const handleSubmit = async (event) => {
     })
 
     window.localStorage.setItem(
-      'loggedNoteappUser', JSON.stringify(user)
+      'loggedUser', JSON.stringify(user)
     )
     noteService.setToken(user.token)
     setUser(user)
-    setUsername('')
-    setPassword('')
   } catch (exception) {
     console.error('Wrong credentials')
     setTimeout(() => {
@@ -29,7 +29,7 @@ const handleSubmit = async (event) => {
   }
 
 }
-*/
+
 
 const LoginForm = () => {
   const formik = useFormik({
@@ -44,12 +44,12 @@ const LoginForm = () => {
     onSubmit: async (values) => {
       //values = { username: "as", password: "as" }
       console.log(values)
+      handleSubmit(values)
     }
   });
 
 
   const user = useSelector(state => state.user)
-  const history = useHistory()
 
 
   const loginForm = () => {

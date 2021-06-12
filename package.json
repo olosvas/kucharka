@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -47,6 +48,7 @@
     "@typescript-eslint/parser": "^4.26.1",
     "eslint": "^7.28.0",
     "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-react": "^7.24.0"
+    "eslint-plugin-react": "^7.24.0",
+    "json-server": "^0.16.3"
   }
 }
