@@ -2,10 +2,16 @@ const initialUser = null
 
 const userReducer = (state = initialUser, action) => {
   switch (action.type) {
-  case 'GOOD':
-    return {  ...state,
-      good: state.good + 1 }
+  case 'SET_USER':
+    return {  user:action.data }
   default: return state
+  }
+}
+
+export const setUser = (user) => {
+  return {
+    type: 'SET_USER',
+    data: user,
   }
 }
 
