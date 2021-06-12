@@ -21,19 +21,31 @@ import { createStore, combineReducers } from 'redux'
 import recipeReducer from './reducers/recipeReducer'
 import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
+import userReducer from './reducers/userReducer'
 //import AddRecipe from './components/AddRecipe'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
     filter: filterReducer,
-    materials: materialsReducer
+    materials: materialsReducer,
+    user: userReducer
 })
 
 const store = createStore(reducer)
 
 
 const App = () => {
-  //const [user, setUser] = useState(null)
+
+/*
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
+    if(loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      noteService.setToken(user.token)
+    }
+  }, [])
+  */
 
   const recipes = useSelector(state => state.recipes)
 
@@ -50,8 +62,12 @@ const App = () => {
   return (
     <div>
       <div>
-        <Link style={padding} to="/">Recepies</Link>
-        <Link style={padding} to="/login">login</Link>
+        <div>
+          <Link style={padding} to="/">Recepies</Link>
+        </div>
+        <div>
+          <Link style={padding} to="/login">login</Link>
+        </div>
       </div>
 
       <Switch>
@@ -65,6 +81,8 @@ const App = () => {
           <RecipeGrid />
         </Route>
       </Switch>
+
+
       <div>
         <br />
         <em>Note app, Department of Computer Science 2021</em>

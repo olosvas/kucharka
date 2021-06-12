@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Material from './Material'
 
 
-const AddRecipe = () => {
+const AddRecipePage = () => {
     const [recipe, setRecipes] = useState([])
     const [selectedMaterial, setSelectedMaterial] = useState([])
 
@@ -16,9 +16,9 @@ const AddRecipe = () => {
 
     return (
         <div>
-        
+
         </div>
     )
 
 }
-export default AddRecipe
+export default AddRecipePage
