@@ -1,6 +1,6 @@
 import React from 'react'
 /*eslint linebreak-style: ["error", "windows"]*/
-const Cube = ({ recipe1 }) => {
+const Material = ({ recipe1 }) => {
   const recipe = recipe1
 
   //console.log('recipe passed into Cube is - ', recipe)
@@ -8,9 +8,8 @@ const Cube = ({ recipe1 }) => {
   return(
     <div>
       <div>{recipe.name}</div>
-      <div>{recipe.author}</div>
     </div>
   )
 }
 
-export default Cube
+export default Material
