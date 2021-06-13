@@ -1,5 +1,4 @@
 import React from 'react'
-/*eslint linebreak-style: ["error", "windows"]*/
 const RecipeFull = ({ recipe }) => {
   console.log('recipe props from RecipeFull - ', recipe)
 
