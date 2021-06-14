@@ -14,6 +14,7 @@ const finalSubmit = () => {
 const AddRecipePage = () => {
   const dispatch = useDispatch()
   const steps = useSelector(state => state.steps)
+  console.log("steps from addrecipePage is - ", steps)
 
   const addNewStep = () => {
     const stepObject = {
@@ -31,8 +32,8 @@ const AddRecipePage = () => {
       <ul>
         {steps.map(step =>
           <div key={step.id}>
-            <li>
-              <Step />
+            <li key={step.id}>
+              <Step id={step.id}/>
             </li>
           </div>
         )}

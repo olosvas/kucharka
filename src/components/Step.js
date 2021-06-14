@@ -1,27 +1,35 @@
 import React, { useState } from 'react'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux'
+import { editStep } from '../reducers/stepReducer'
 
-const Step = () => {
+const Step = ({id}) => {
+  const dispatch = useDispatch()
+
   const formik = useFormik({
     initialValues: {
       title: '',
       content: ''
     },
     validationSchema: Yup.object({
-      username: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-      password: Yup.string().max(20, 'Must be 20 characters or less').required('Required')
+      title: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
+      content: Yup.string().max(20, 'Must be 20 characters or less').required('Required')
     }),
-    onSubmit: async (values) => {
+    onSubmit: (values) => {
       //values = { username: "as", password: "as" }
-      console.log(values)
+      const submitObj = {
+        ...values,
+        id: id
+      }
+      dispatch(editStep(submitObj))
     }
   });
 
 
     return (
         <div>
-          <div>Step no.{}</div>
+          <div>Step no.{id + 1}</div>
           <div>
           <form onSubmit={formik.handleSubmit}>
             <div>

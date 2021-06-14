@@ -50,11 +50,6 @@ const LoginForm = () => {
     }
   });
 
-  formik.initialValues = {
-    ...formik.initialValues,
-    newField: ''
-  }
-
   const user = useSelector(state => state.user)
 
 
