@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import RecipeGrid from './components/RecipeGrid'
-import { Provider, useSelector } from 'react-redux'
+import { Provider, useSelector, useDispatch } from 'react-redux'
 import RecipeFull from './components/RecipeFull'
 import AddRecipePage from './components/AddRecipePage'
 import Login from './components/Login'
+import recipeService from './services/recipeService';
 
 //cototjeje
 import {
@@ -18,7 +19,7 @@ import {
 } from 'react-router-dom'
 
 import { createStore, combineReducers } from 'redux'
-import recipeReducer from './reducers/recipeReducer'
+import recipeReducer, {initializeRecipes} from './reducers/recipeReducer'
 import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
@@ -36,6 +37,16 @@ const store = createStore(reducer)
 
 
 const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    recipeService
+      .getAll()
+      .then(initialRecipes => {
+        dispatch(initializeRecipes(initialRecipes))
+        console.log("initialRecipes from index is - ", initialRecipes)
+      })
+  }, [])
 
 /*
   useEffect(() => {

@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import loginService from '../services/loginService'
-import noteService from '../services/noteService'
+import recipeService from '../services/recipeService';
 import { setUser } from '../reducers/userReducer'
 
 import { Link } from 'react-router-dom'
@@ -21,7 +21,7 @@ const handleSubmit = async ({ username, password }) => {
     window.localStorage.setItem(
       'loggedUser', JSON.stringify(user)
     )
-    noteService.setToken(user.token)
+    recipeService.setToken(user.token)
     setUser(user)
   } catch (exception) {
     console.error('Wrong credentials')
@@ -49,11 +49,6 @@ const LoginForm = () => {
       handleSubmit(values)
     }
   });
-
-  formik.initialValues = {
-    ...formik.initialValues,
-    newField: ''
-  }
 
   const user = useSelector(state => state.user)
 

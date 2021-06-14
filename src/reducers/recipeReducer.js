@@ -1,3 +1,6 @@
+import recipeService from '../services/recipeService';
+
+/*
 const initialRecipes = [
   {
     id: 1,
@@ -76,57 +79,26 @@ const initialRecipes = [
     ]
   }
 ]
+*/
 
 
 
 
-
-const recipeReducer = (state = initialRecipes, action) => {
+const recipeReducer = (state = [], action) => {
   console.log("action is:" ,action)
   switch (action.type) {
-  case 'GOOD':
-    return {  ...state,
-      good: state.good + 1 }
-  case 'OK':
-    return {  ...state,
-      ok: state.ok + 1 }
-  case 'BAD':
-    return {  ...state,
-      bad: state.bad + 1 }
-  case 'ZERO':
-    return {
-      good: 0,
-      ok: 0,
-      bad: 0
-    }
+  case 'INITIALIZE_RECIPES':
+    return action.data
   default: return state
   }
 
 }//end of store
 
-/*
-const good = () => {
-  store.dispatch({
-    type: 'GOOD'
-  })
+export const initializeRecipes = (recipes) => {
+  return {
+    type: 'INITIALIZE_RECIPES',
+    data: recipes,
+  }
 }
 
-const ok = () => {
-  store.dispatch({
-    type: 'OK'
-  })
-}
-
-const bad = () => {
-  store.dispatch({
-    type: 'BAD'
-  })
-}
-
-const reset = () => {
-  store.dispatch({
-    type: 'ZERO'
-  })
-}
-*/
 export default recipeReducer
