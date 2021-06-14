@@ -7,6 +7,8 @@ import loginService from '../services/loginService'
 import noteService from '../services/noteService'
 import { setUser } from '../reducers/userReducer'
 
+import { Link } from 'react-router-dom'
+
 const handleSubmit = async ({ username, password }) => {
 
   console.log('logging in with', username, password)
@@ -48,6 +50,10 @@ const LoginForm = () => {
     }
   });
 
+  formik.initialValues = {
+    ...formik.initialValues,
+    newField: ''
+  }
 
   const user = useSelector(state => state.user)
 
@@ -66,12 +72,14 @@ const LoginForm = () => {
                   : null
               }
             </div>
-            <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastName}/> {
-              formik.touched.password && formik.errors.password
-                ? (<div>{formik.errors.password}</div>)
-                : null
-            }
+            <div>
+              <label htmlFor="password">Password</label>
+              <input id="password" name="password" type="password" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastName}/> {
+                formik.touched.password && formik.errors.password
+                  ? (<div>{formik.errors.password}</div>)
+                  : null
+              }
+            </div>
             <div>
               <button type="submit">Submit</button>
             </div>
@@ -88,10 +96,13 @@ const LoginForm = () => {
         : <div>
             <p>{user.name}
               logged-in</p>
-            <div>login options</div>
+            <div>
+              <div>login options</div>
+              <Link to="/AddRecipe">Create new </Link>
+            </div>
           </div>
     }
-    < /div>
+    </div>
   )
 }
 
