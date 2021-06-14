@@ -1,5 +1,4 @@
 import React from 'react'
-/*eslint linebreak-style: ["error", "windows"]*/
 const Material = ({ recipe1 }) => {
   const recipe = recipe1
 
