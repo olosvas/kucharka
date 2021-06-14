@@ -22,13 +22,14 @@ import recipeReducer from './reducers/recipeReducer'
 import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
-//import AddRecipe from './components/AddRecipe'
+import stepReducer from './reducers/stepReducer'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
     filter: filterReducer,
     materials: materialsReducer,
-    user: userReducer
+    user: userReducer,
+    steps: stepReducer
 })
 
 const store = createStore(reducer)
@@ -73,6 +74,9 @@ const App = () => {
       <Switch>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/AddRecipe">
+          <AddRecipePage />
         </Route>
         <Route path="/recipes/:id">
           <RecipeFull recipe={recipe} />
