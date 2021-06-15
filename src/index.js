@@ -24,13 +24,15 @@ import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
 import stepReducer from './reducers/stepReducer'
+import tagReducer, {getTags} from './reducers/tagReducer'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
     filter: filterReducer,
     materials: materialsReducer,
     user: userReducer,
-    steps: stepReducer
+    steps: stepReducer,
+    tags: tagReducer
 })
 
 const store = createStore(reducer)
@@ -39,15 +41,17 @@ const store = createStore(reducer)
 const App = () => {
   const dispatch = useDispatch()
 
+
   useEffect(() => {
     recipeService
       .getAll()
       .then(initialRecipes => {
         dispatch(getRecipes(initialRecipes))
+        //const allTagsUnique = initialRecipes
+        //dispatch(getTags(allTagsUnique))
         console.log("initialRecipes from index is - ", initialRecipes)
       })
   }, [])
-
 /*
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')

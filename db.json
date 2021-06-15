@@ -4,6 +4,7 @@
       "id": 0,
       "name": "nula",
       "author": "author1",
+      "tags": ["tag1","tag2","tag3"],
       "steps": [
         {
           "id": 1,
@@ -23,6 +24,7 @@
       "id": 1,
       "name": "jeden",
       "author": "author2",
+      "tags": ["tag4","tag5","tag6"],
       "steps": [
         {
           "id": 1,
@@ -42,6 +44,7 @@
       "id": 2,
       "name": "dva",
       "author": "author3",
+      "tags": ["tag1","tag2","tag4"],
       "steps": [
         {
           "id": 1,
@@ -61,6 +64,7 @@
       "id": 3,
       "name": "tri",
       "author": "author4",
+      "tags": ["tag4","tag5","tag3"],
       "steps": [
         {
           "id": 1,
