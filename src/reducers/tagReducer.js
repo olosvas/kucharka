@@ -3,7 +3,7 @@ const initialTags = []
 const tagReducer = (state = initialTags, action) => {
   switch (action.type) {
   case 'GET_TAGS':
-    return {  user:action.data }
+    return action.data
   default: return state
   }
 }

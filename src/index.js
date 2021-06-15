@@ -25,6 +25,7 @@ import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
 import stepReducer from './reducers/stepReducer'
 import tagReducer, {getTags} from './reducers/tagReducer'
+import tagFilterReducer from './reducers/tagFilterReducer'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
@@ -32,7 +33,8 @@ const reducer = combineReducers({
     materials: materialsReducer,
     user: userReducer,
     steps: stepReducer,
-    tags: tagReducer
+    tags: tagReducer,
+    tagFilter: tagFilterReducer
 })
 
 const store = createStore(reducer)
@@ -47,9 +49,12 @@ const App = () => {
       .getAll()
       .then(initialRecipes => {
         dispatch(getRecipes(initialRecipes))
-        //const allTagsUnique = initialRecipes
-        //dispatch(getTags(allTagsUnique))
-        console.log("initialRecipes from index is - ", initialRecipes)
+        const allTagsUnique = initialRecipes.map(
+          recipeObj => recipeObj.tags
+        )
+        const oneArray = Array.prototype.concat(...allTagsUnique)
+        const uniqueTags = [...new Set(oneArray)]
+        dispatch(getTags(uniqueTags))
       })
   }, [])
 /*

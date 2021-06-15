@@ -1,4 +1,3 @@
-/*eslint linebreak-style: ["error", "windows"]*/
 const filterReducer = (state = '', action) => {
   switch (action.type) {
   case 'SET_FILTER':
