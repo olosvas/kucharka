@@ -34,6 +34,9 @@ const AddRecipePage = () => {
       steps: steps
     }
     console.log("finalObject is", finalObject)
+
+    recipeService.create(finalObject).then(res =>
+      console.log("response form finalObject submit is- ", res))
   }
 
   const addNewStep = () => {
@@ -56,7 +59,7 @@ const AddRecipePage = () => {
               : null
             }
         </div>
-        <div><button onClick={finalSubmit}>Submit</button></div>
+        <div><button type='submit' >Submit</button></div>
       </form>
     </div>
     <div>

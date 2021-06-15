@@ -19,7 +19,7 @@ import {
 } from 'react-router-dom'
 
 import { createStore, combineReducers } from 'redux'
-import recipeReducer, {initializeRecipes} from './reducers/recipeReducer'
+import recipeReducer, {getRecipes} from './reducers/recipeReducer'
 import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
@@ -43,7 +43,7 @@ const App = () => {
     recipeService
       .getAll()
       .then(initialRecipes => {
-        dispatch(initializeRecipes(initialRecipes))
+        dispatch(getRecipes(initialRecipes))
         console.log("initialRecipes from index is - ", initialRecipes)
       })
   }, [])
