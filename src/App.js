@@ -8,7 +8,7 @@ import Login from './components/Login'
 import recipeService from './services/recipeService';
 import Menu from './components/Menu'
 import Footer from './components/Footer'
-import { GlobalStyles } from './components/GlobalStyles.style'
+
 
 //cototjeje
 import {
@@ -21,13 +21,6 @@ import {
     useRouteMatch
 } from 'react-router-dom'
 
-
-import  styled  from 'styled-components'
-
-const StyledLogin = styled(Login)`
-    display: inline-block;
-
-`
 
 
 const App = () => {
@@ -44,12 +37,12 @@ const App = () => {
 
     return (
       
-    <div>
+    <div className = "container is-max-desktop">
     
         <Menu/>
         <Switch>
           <Route path="/login">
-            <StyledLogin />
+            <Login />
           </Route>
           <Route path="/AddRecipe">
             <AddRecipePage />

@@ -84,7 +84,8 @@ const LoginForm = () => {
     </div>)
   }//end of loginForm function
 
-  return (<div>
+  return (
+  <div>
     {
       user === null
         ? loginForm()

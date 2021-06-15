@@ -4,6 +4,7 @@
       "id":1,
       "name":"Hummus s mletým mäsom a domácim kváskovým pita chlebom",
       "author":"author1",
+      "image": "https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567593.jpg",
       "steps":[
         {
           "id":1,
@@ -35,6 +36,7 @@
       "id":2,
       "name":"Zapekané tortily taquitos",
       "author":"author2",
+      "image": "https://varecha.pravda.sk/usercontent/images/velky-postup11_1623082176.jpg",
       "steps":[
         {
           "id":1,
@@ -72,6 +74,7 @@
       "id":3,
       "name":"Zemiaky na paprike s kuracinou",
       "author":"author3",
+      "image": "https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530481.jpg",
       "steps":[
         {
           "id":1,
@@ -139,6 +142,7 @@
       "id":4,
       "name":"Opekaná zelenina s kuracím mäsom a rezancami",
       "author":"author4",
+      "image": "https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618063072.jpg",
       "steps":[
         {
           "id":1,
@@ -189,7 +193,39 @@
           "text":"Môže sa pridať aj chilli paprička, sezamové semiačka, kukurica, prípadne pred koncom aj jedno vajíčko, ktoré v zmesi poriadne premiešame."
         }
       ]
-    }
+    },
+    {
+        "id":1,
+        "name":"Hummus s mletým mäsom a domácim kváskovým pita chlebom",
+        "author":"author1",
+        "image": "https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567593.jpg",
+        "steps":[
+          {
+            "id":1,
+            "title":"1",
+            "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567359.jpg",
+            "text":"Na olivovom oleji a cibuli opražíme sprudka mleté mäso, ktoré sme nechali predtým vonku z chladničky pri izbovej teplote, aby neutrpelo teplotný šok :) Pri opekaní musíme rozbíjať hrudky a obracať, aby bolo mäso sypké a rovnomerne opečené. Keď zhnedne, pridáme čierne mleté korenie, jednu lyžičku mletej škorice, jednu lyžičku drvenej rímskej rasce, jednu lyžičku údenej mletej papriky a rovnako aj majoránu. Premiešame, pridáme drvené rajčiny, soľ podľa chuti, a trošičku vody, a prikryté dusíme cca 20-30 minút. Samozrejme, rovnako sa dá namiesto mletého hovädzieho použiť aj jahňacie, alebo vnútornosti, pre vegetariánov to môžu byť huby."
+          },
+          {
+            "id":2,
+            "title":"2",
+            "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567430.jpg",
+            "text":"Pokiaľ sa mäso dusí, prichystáme si zeleninu, hummus:"
+          },
+          {
+            "id":3,
+            "title":"3",
+            "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567493.jpg",
+            "text":"Pita chlieb sa upiekol za necelých desať minút, cesto som ale mala nakysnuté v chladničke už dva dni - je z kvásku lievito madre."
+          },
+          {
+            "id":4,
+            "title":"4",
+            "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567593.jpg",
+            "text":"Na tanier naservírujeme hummus tak, že v strede bude priestor pre mäso, pridáme podľa chuti nachystanú zeleninu, koriander, petržlenovú vňať, olivový olej a citrón na pokvapkanie."
+          }
+        ]
+      }
   ],
     "materials":[
       {

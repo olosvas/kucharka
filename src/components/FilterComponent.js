@@ -14,8 +14,9 @@ const FilterComponent = () => {
 
   return (
     <div>
-      <input onChange={handleChange}/>
+      <input className="input is-medium" onChange={handleChange} placeholder="Find your recipe"/>
     </div>
   )
 }
 export default FilterComponent
+
