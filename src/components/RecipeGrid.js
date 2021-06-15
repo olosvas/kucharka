@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Cube from './Cube'
 import FilterComponent from './FilterComponent'
+import recipeReducer, { initializeRecipes } from '../reducers/recipeReducer'
+import recipeService from '../services/recipeService';
+
+
 
 const RecipeGrid = () => {
   const recipes = useSelector(state => state.recipes)
@@ -10,6 +14,19 @@ const RecipeGrid = () => {
 
   console.log('recipes from RecipeGrid is - ', recipes)
 //  console.log('filter value from FlterComponent is - ', filter)
+
+
+
+const dispatch = useDispatch()
+
+useEffect(() => {
+    recipeService
+        .getAll()
+        .then(initialRecipes => {
+            dispatch(initializeRecipes(initialRecipes))
+            console.log("initialRecipes from index is - ", initialRecipes)
+        })
+}, [])
 
   const filteredRecepies = recipes.filter(recipe =>
     recipe.name.toLowerCase().includes(filter.toLowerCase())

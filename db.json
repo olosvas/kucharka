@@ -2,77 +2,191 @@
     "recipes": [
     {
       "id":1,
-      "name":"jeden",
+      "name":"Hummus s mletým mäsom a domácim kváskovým pita chlebom",
       "author":"author1",
       "steps":[
         {
           "id":1,
-          "title":"step1title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"1",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567359.jpg",
+          "text":"Na olivovom oleji a cibuli opražíme sprudka mleté mäso, ktoré sme nechali predtým vonku z chladničky pri izbovej teplote, aby neutrpelo teplotný šok :) Pri opekaní musíme rozbíjať hrudky a obracať, aby bolo mäso sypké a rovnomerne opečené. Keď zhnedne, pridáme čierne mleté korenie, jednu lyžičku mletej škorice, jednu lyžičku drvenej rímskej rasce, jednu lyžičku údenej mletej papriky a rovnako aj majoránu. Premiešame, pridáme drvené rajčiny, soľ podľa chuti, a trošičku vody, a prikryté dusíme cca 20-30 minút. Samozrejme, rovnako sa dá namiesto mletého hovädzieho použiť aj jahňacie, alebo vnútornosti, pre vegetariánov to môžu byť huby."
         },
         {
           "id":2,
-          "title":"step2title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"2",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567430.jpg",
+          "text":"Pokiaľ sa mäso dusí, prichystáme si zeleninu, hummus:"
+        },
+        {
+          "id":3,
+          "title":"3",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567493.jpg",
+          "text":"Pita chlieb sa upiekol za necelých desať minút, cesto som ale mala nakysnuté v chladničke už dva dni - je z kvásku lievito madre."
+        },
+        {
+          "id":4,
+          "title":"4",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup1479_1618567593.jpg",
+          "text":"Na tanier naservírujeme hummus tak, že v strede bude priestor pre mäso, pridáme podľa chuti nachystanú zeleninu, koriander, petržlenovú vňať, olivový olej a citrón na pokvapkanie."
         }
       ]
     },
     {
       "id":2,
-      "name":"dva",
+      "name":"Zapekané tortily taquitos",
       "author":"author2",
       "steps":[
         {
           "id":1,
-          "title":"step1title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"1",
+          "image":"#",
+          "text":"Očistené a na kocky nakrájané zemiaky uvaríme. Keď sú mäkké, vodu zlejeme."
         },
         {
           "id":2,
-          "title":"step2title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"2",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup11_1623081988.jpg",
+          "text":"Plnka: Cibuľu nakrájame na kocky a osmažíme na oleji. Pridáme nastrúhanú mrkvu, ktorú spolu s cibuľkou ešte chvíľku osmažíme, aby chytila zlatistý nádych. Pridáme kurkumu, mletú papriku, soľ a minútku ešte restujeme. Potom pridáme vodu a uvarenú šošovicu. Zmes dobre premiešame a varíme ešte 5 minút za občasného miešania. Pridáme rastlinné mlieko, vidličkou popučené zemiaky, 100 g nastrúhaného vegánskeho syra a nadrobno nasekané bylinky. Všetko dôkladne premiešame a máme hotovú zmes na plnenie tortíl."
+        },
+        {
+          "id":3,
+          "title":"3",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup11_1623082050.jpg",
+          "text":"Tortily postupne plníme zmesou."
+        },
+        {
+          "id":4,
+          "title":"4",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup11_1623082176.jpg",
+          "text":"Naplnené placky zatočíme a ukladáme do vymastenej zapekacej formy. Povrch placiek zľahka potrieme olejom a posypeme vegmezánom (ak máme) alebo konopnými semienkami. Posýpku možno pokojne vynechať. Dáme piecť pri 200 stupňoch na 20 minút pri spodnom aj vrchnom ohreve."
+        },
+        {
+          "id":5,
+          "title":"5",
+          "image":"#",
+          "text":"Servírujeme spolu s červenou kapustou, so šalátom, s cibuľkou a jogurtom alebo jednoducho s obľúbeným dipom."
         }
       ]
     },
     {
       "id":3,
-      "name":"tri",
+      "name":"Zemiaky na paprike s kuracinou",
       "author":"author3",
       "steps":[
         {
           "id":1,
-          "title":"step1title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"1",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530146.jpg",
+          "text":"Na začiatku som vložil strúčiky cesnaku do teplej vody, umyl, očistil a pokrájal čerstvé papriky, kuracie mäso na väčšie kúsky, zelerové stonky na „C-čka“, cibuľu a zemiaky („dielo“ nezahusťujem múkou, preto dávam 1/3 zemiakov „rozvarného typu“, ktoré šťavu zahustia)."
         },
         {
           "id":2,
-          "title":"step2title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"2",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530192.jpg",
+          "text":"Kúsky kuraciny som 5-7 minút opiekol na horúcom oleji a po ich vybratí na pomocnú tácňu,"
+        },
+        {
+          "id":3,
+          "title":"3",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530219.jpg",
+          "text":"vo výpeku do sklovita orestoval pokrájanú cibuľu s pretlačeným cesnakom."
+        },
+        {
+          "id":4,
+          "title":"4",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530253.jpg",
+          "text":"Hrniec som odstavil zo ohrevu a vsypal doň koreniny (soľ 2 KL, čerstvo mleté čierne korenie ČL, korenie na kuracie mäso 2 KL a PL mletej sladkej papriky)."
+        },
+        {
+          "id":5,
+          "title":"5",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530290.jpg",
+          "text":"Hneď po premiešaní som hrniec vrátil na ohrev a vložil lístočky ružičkového kelu, pokrájané stonky zeleru a kúsky paprík."
+        },
+        {
+          "id":6,
+          "title":"6",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530322.jpg",
+          "text":"Po zmiešaní som pridal aj pološtipľavý marocký „Harissa“ krém."
+        },
+        {
+          "id":7,
+          "title":"7",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530352.jpg",
+          "text":"Po dvoch-troch minútach dusenia som do hrnca vložil pokrájané zemiaky (tie biele sú tzv. „pečiarky“)."
+        },
+        {
+          "id":8,
+          "title":"8",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530381.jpg",
+          "text":"„Kompletne“ zalial horúcim kuracím vývarom (ale pokojne by svoju funkciu splnila aj voda)."
+        },
+        {
+          "id":9,
+          "title":"9",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530409.jpg",
+          "text":"Po 10 minútach už boli zemiaky dostatočne mäkké, preto som k nim pridal aj opečené kúsky kuracieho mäsa. Teraz už stačilo iba 5-7 minút a"
+        },
+        {
+          "id":10,
+          "title":"10",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup875_1618530481.jpg",
+          "text":"podával som zemiakový „flanc“ posypaný pokrájanými lístkami petržlenovej a zelerovej vňate."
         }
       ]
     },
     {
       "id":4,
-      "name":"styri",
+      "name":"Opekaná zelenina s kuracím mäsom a rezancami",
       "author":"author4",
       "steps":[
         {
           "id":1,
-          "title":"step1title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"1",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618061856.jpg",
+          "text":"Marináda: Zmiešame mletú papriku, čierne korenie, tymian, majorán, kurkumu, škoricu, rascu. Pridáme horčicu, lyžicu sójovej a worcesterskej omáčky a zmiešame. Kuracie prsia nakrájame a premiešame s vytvorenou marinádou."
         },
         {
           "id":2,
-          "title":"step2title",
-          "image":"www.link.com",
-          "text":"postup"
+          "title":"2",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618061898.jpg",
+          "text":"Nakrájame si zeleninu na pásiky."
+        },
+        {
+          "id":3,
+          "title":"3",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618062588.jpg",
+          "text":"Na panvicu dáme rozpáliť olej a vložíme kuracie kúsky. Opekáme sprudka 5-10 minút, pokiaľ maso nie je hotové. Mäso vyberieme z panvice a odložíme bokom. Do vyprázdnenej panvice vložíme cibuľu nakrájanú na väčšie kusy spolu so šampiňónmi. Opekáme sprudka 5 minút, alebo dokým nie sú cibuľa aj šampiňóny poriadne opečené."
+        },
+        {
+          "id":4,
+          "title":"4",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618062660.jpg",
+          "text":"Pridáme mrkvu. Stále sprudka opekáme a miešame."
+        },
+        {
+          "id":5,
+          "title":"5",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618062684.jpg",
+          "text":"Po 5 minútach pridáme zvyšnú zeleninu okrem kapusty. Pridáme aj zázvor a roztlačený cesnak. Do panvice vložíme aj hotové kuracie kúsky. Posypeme trstinovým cukrom."
+        },
+        {
+          "id":6,
+          "title":"6",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618063054.jpg",
+          "text":"Zelenina by mala byť chrumkavá. Ak už začne pomaly mäknúť, pridáme bielu kapustu, zvyšné množstvo sójovej a worcesterskej omáčky a premiešame. Po 3 minútach máme hotovo."
+        },
+        {
+          "id":7,
+          "title":"7",
+          "image":"https://varecha.pravda.sk/usercontent/images/velky-postup84073_1618063072.jpg",
+          "text":"Zeleninovú zmes s kuracím masom môžme konzumovať aj bez ďalšej prílohy. Ja som však zvolila rezance (môžu byť akékoľvek, aj špagety) a uvarené som ich primiešala ku zmesi rovno v panvici."
+        },
+        {
+          "id":8,
+          "title":"8",
+          "image":"#",
+          "text":"Môže sa pridať aj chilli paprička, sezamové semiačka, kukurica, prípadne pred koncom aj jedno vajíčko, ktoré v zmesi poriadne premiešame."
         }
       ]
     }
