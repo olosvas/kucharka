@@ -45,7 +45,7 @@ const App = () => {
     return (
       
     <div>
-    <GlobalStyles />
+    
         <Menu/>
         <Switch>
           <Route path="/login">
