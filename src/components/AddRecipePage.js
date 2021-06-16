@@ -35,7 +35,6 @@ const AddRecipePage = () => {
       steps: steps
     }
     console.log("finalObject is", finalObject)
-    dispatch(addRecipe(finalObject))
     recipeService.create(finalObject).then(res =>
       console.log("response form finalObject submit is- ", res))
   }

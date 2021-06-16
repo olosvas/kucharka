@@ -4,11 +4,6 @@ const recipeReducer = (state = [], action) => {
   switch (action.type) {
   case 'SET_RECIPES':
     return action.data
-  case 'ADD_RECIPE':
-    if(state.map()){
-      return state
-    }
-    return state.concat(action.data)
   default: return state
   }
 
@@ -18,13 +13,6 @@ export const setRecipes = (recipes) => {
   return {
     type: 'SET_RECIPES',
     data: recipes,
-  }
-}
-
-export const addRecipe = (recipeObj) => {
-  return {
-    type: 'ADD_RECIPE',
-    data: recipeObj,
   }
 }
 
