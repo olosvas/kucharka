@@ -27,6 +27,7 @@ import stepReducer from './reducers/stepReducer'
 import tagReducer, {getTags} from './reducers/tagReducer'
 import tagFilterReducer from './reducers/tagFilterReducer'
 import addRecipeMaterialReducer from './reducers/addRecipeMaterialReducer'
+import tagsForRecipeReducer from './reducers/tagsForRecipeReducer'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
@@ -36,7 +37,8 @@ const reducer = combineReducers({
     steps: stepReducer,
     tags: tagReducer,
     tagFilter: tagFilterReducer,
-    addRecipeMaterials: addRecipeMaterialReducer
+    addRecipeMaterials: addRecipeMaterialReducer,
+    tagsForRecipe:tagsForRecipeReducer
 })
 
 const store = createStore(reducer)
@@ -45,7 +47,7 @@ const store = createStore(reducer)
 const App = () => {
   const dispatch = useDispatch()
 
-
+/* generates tags from recipes
   useEffect(() => {
     recipeService
       .getAll()
@@ -59,7 +61,10 @@ const App = () => {
         dispatch(getTags(uniqueTags))
       })
   }, [])
-  
+*/
+
+
+
 /*
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')

@@ -5,9 +5,9 @@
       "name": "nula",
       "author": "author1",
       "tags": [
-        "tag1",
-        "tag2",
-        "tag3"
+        "cat1",
+        "cat2",
+        "cat3"
       ],
       "steps": [
         {
@@ -28,10 +28,7 @@
       "id": 1,
       "name": "jeden",
       "author": "author2",
-      "tags": [
-        "tag4",
-        "tag5",
-        "tag6"
+      "tags": ["cat1"
       ],
       "steps": [
         {
@@ -52,10 +49,7 @@
       "id": 2,
       "name": "dva",
       "author": "author3",
-      "tags": [
-        "tag1",
-        "tag2",
-        "tag4"
+      "tags": [ "cat2","cat4"
       ],
       "steps": [
         {
@@ -77,9 +71,7 @@
       "name": "tri",
       "author": "author4",
       "tags": [
-        "tag4",
-        "tag5",
-        "tag3"
+        "cat4","cat6"
       ],
       "steps": [
         {
@@ -128,5 +120,6 @@
       "unit": "cc",
       "id": 6
     }
-  ]
+  ],
+  "categories": ["cat1","cat2","cat3","cat4","cat5","cat6"]
 }

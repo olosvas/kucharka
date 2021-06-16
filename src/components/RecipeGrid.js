@@ -5,7 +5,9 @@ import Cube from './Cube'
 import FilterComponent from './FilterComponent'
 import TagButtons from './TagButtons'
 import recipeService from '../services/recipeService';
+import tagService from '../services/tagService';
 import {setRecipes} from '../reducers/recipeReducer';
+import {setTags} from '../reducers/tagReducer'
 
 const RecipeGrid = () => {
   const dispatch = useDispatch()
@@ -17,6 +19,9 @@ const RecipeGrid = () => {
         console.log('useEffect in grid runs')
         dispatch(setRecipes(initialRecipes))
       })
+    tagService.getAllCategories().then(allCategoriesArr =>
+      dispatch(setTags(allCategoriesArr))
+      )
   }, [])
 
   const recipes = useSelector(state => state.recipes)
@@ -32,8 +37,14 @@ const RecipeGrid = () => {
   )
 
   const afterTagFilter = filteredRecepies.filter(recipe =>
-    recipe.tags.filter(tag => tagFilter.includes(tag)).length > 0 ? false : true
+    recipe.tags.filter(tag => tagFilter.includes(tag)).length > 0 ? true : false
   )
+
+  let recipesToShow = afterTagFilter
+
+  if(afterTagFilter.length === 0){
+    recipesToShow = filteredRecepies
+  }
 
 
   return (
@@ -44,7 +55,7 @@ const RecipeGrid = () => {
         <TagButtons />
       </div>
       <ul>
-        {afterTagFilter.map(recipe =>
+        {recipesToShow.map(recipe =>
           <div key={recipe.id}>
             <li>
               <Link to={`/recipes/${recipe.id}`}>

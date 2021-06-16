@@ -1,6 +1,6 @@
 const initialTags = []
 
-const tagReducer = (state = initialTags, action) => {
+const tagsForRecipeReducer = (state = initialTags, action) => {
   switch (action.type) {
   case 'SET_TAGS':
     return action.data
@@ -15,4 +15,4 @@ export const setTags = (tags) => {
   }
 }
 
-export default tagReducer
+export default tagsForRecipeReducer

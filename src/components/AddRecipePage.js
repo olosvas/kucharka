@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import MaterialSelection from './MaterialSelection'
+import AttachTagComponent from './AttachTagComponent'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import Step from './Step';
@@ -8,10 +9,13 @@ import { addStep } from '../reducers/stepReducer'
 import recipeService from '../services/recipeService';
 import {addRecipe} from '../reducers/recipeReducer'
 
+
 const AddRecipePage = () => {
   const dispatch = useDispatch()
   const steps = useSelector(state => state.steps)
   const user = useSelector(state => state.user)
+  const recipeMaterials = useSelector(state => state.addRecipeMaterials)
+  const tagsForRecipe = useSelector(state => state.tagsForRecipe)
 
   const formik = useFormik({
     initialValues: {
@@ -32,7 +36,9 @@ const AddRecipePage = () => {
     const finalObject = {
       name: mainTitle,
       author: user,
-      steps: steps
+      steps: steps,
+      materials:recipeMaterials,
+      tags:tagsForRecipe
     }
     console.log("finalObject is", finalObject)
     recipeService.create(finalObject).then(res =>
@@ -61,6 +67,9 @@ const AddRecipePage = () => {
         </div>
         <div><button type='submit' >Submit</button></div>
       </form>
+      <div>
+        <AttachTagComponent/>
+      </div>
     </div>
     <div>
       <MaterialSelection />
