@@ -19,7 +19,7 @@ import {
 } from 'react-router-dom'
 
 import { createStore, combineReducers } from 'redux'
-import recipeReducer, {getRecipes} from './reducers/recipeReducer'
+import recipeReducer, {setRecipes} from './reducers/recipeReducer'
 import filterReducer from './reducers/filterReducer'
 import materialsReducer from './reducers/materialsReducer'
 import userReducer from './reducers/userReducer'
@@ -50,7 +50,7 @@ const App = () => {
     recipeService
       .getAll()
       .then(initialRecipes => {
-        dispatch(getRecipes(initialRecipes))
+        console.log('useEffect runs')
         const allTagsUnique = initialRecipes.map(
           recipeObj => recipeObj.tags
         )

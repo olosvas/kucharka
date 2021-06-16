@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Cube from './Cube'
 import FilterComponent from './FilterComponent'
 import TagButtons from './TagButtons'
+import recipeService from '../services/recipeService';
+import {setRecipes} from '../reducers/recipeReducer';
 
 const RecipeGrid = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    recipeService
+      .getAll()
+      .then(initialRecipes => {
+        console.log('useEffect in grid runs')
+        dispatch(setRecipes(initialRecipes))
+      })
+  }, [])
+
   const recipes = useSelector(state => state.recipes)
   const filter = useSelector(state => state.filter)
   const tagFilter = useSelector(state => state.tagFilter)

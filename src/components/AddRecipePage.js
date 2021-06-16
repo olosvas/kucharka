@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import Step from './Step';
 import { addStep } from '../reducers/stepReducer'
 import recipeService from '../services/recipeService';
+import {addRecipe} from '../reducers/recipeReducer'
 
 const AddRecipePage = () => {
   const dispatch = useDispatch()
@@ -34,7 +35,7 @@ const AddRecipePage = () => {
       steps: steps
     }
     console.log("finalObject is", finalObject)
-
+    dispatch(addRecipe(finalObject))
     recipeService.create(finalObject).then(res =>
       console.log("response form finalObject submit is- ", res))
   }
