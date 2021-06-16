@@ -26,6 +26,7 @@ import userReducer from './reducers/userReducer'
 import stepReducer from './reducers/stepReducer'
 import tagReducer, {getTags} from './reducers/tagReducer'
 import tagFilterReducer from './reducers/tagFilterReducer'
+import addRecipeMaterialReducer from './reducers/addRecipeMaterialReducer'
 
 const reducer = combineReducers({
     recipes: recipeReducer,
@@ -34,7 +35,8 @@ const reducer = combineReducers({
     user: userReducer,
     steps: stepReducer,
     tags: tagReducer,
-    tagFilter: tagFilterReducer
+    tagFilter: tagFilterReducer,
+    addRecipeMaterials: addRecipeMaterialReducer
 })
 
 const store = createStore(reducer)

@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addTag, removeTag } from '../reducers/tagFilterReducer'
+import { addMaterial, removeMaterial} from '../reducers/addRecipeMaterialReducer'
 
 const IndividualMaterialButton = ({materialName}) => {
   const dispatch = useDispatch()
 
   const pressAdd = () => {
-
+    dispatch(addMaterial(materialName))
   }
 
   const pressRemove = () => {
-    
+    dispatch(removeMaterial(materialName))
   }
 
 /*
