@@ -1,29 +1,27 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import IndividualMaterialButton from './IndividualMaterialButton'
-
+import { useDispatch } from 'react-redux'
+import { removeMaterial} from '../reducers/addRecipeMaterialReducer'
 
 const MaterialSelection = () => {
-  const materialsToSelect = useSelector(state => state.materials)
+  const dispatch = useDispatch()
+  const materialsToFilter = useSelector(state => state.materials)
   const currentMaterials = useSelector(state => state.addRecipeMaterials)
 
-  console.log("materialNames is ",materialsToSelect)
+  console.log("materialsToFilter is ",materialsToFilter)
   console.log("currentMaterials is ",currentMaterials)
-/*
-<ul>
-  {tags.map(tag =>
-    <li> <IndividualButton tag={tag}/></li>
-    )
+
+  const pressRemove = (materialObj) => {
+    dispatch(removeMaterial(materialObj))
   }
-</ul>
-*/
 
   //key prop needs to be added
   return(
     <div>
       <div>
         <ul>
-          {materialsToSelect.map(materialObj =>
+          {materialsToFilter.map(materialObj =>
             <li> <IndividualMaterialButton materialObj={materialObj}/></li>
             )
           }
@@ -32,7 +30,12 @@ const MaterialSelection = () => {
       <div>
         <ul>
         {currentMaterials.map(currentMaterial =>
-          <li>{currentMaterial}</li>
+          <li>
+            {currentMaterial.name}
+            {currentMaterial.quantity}
+            {currentMaterial.unit}
+            <button onClick={() => pressRemove(currentMaterial)}>Remove</button>
+          </li>
         )
         }
         </ul>

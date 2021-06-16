@@ -7,33 +7,30 @@ import * as Yup from 'yup';
 
 const IndividualMaterialButton = ({materialObj}) => {
   const dispatch = useDispatch()
-  console.log("materialName - ", materialObj)
 
   const formik = useFormik({
     initialValues: {
       quantity: ''
     },
     validationSchema: Yup.object({
-      quantity: Yup.string().max(15, 'Must be 15 characters or less').required('Required')
+      quantity: Yup.number().required().positive().integer(),
     }),
     onSubmit: async (values) => {
       //values = { username: "as", password: "as" }
-      console.log(values)
-      pressAdd(values)
+      console.log("values from submit", values)
+      const materialNameObj = {
+        name: materialObj.name,
+        quantity: values.quantity,
+        unit: materialObj.unit
+      }
+      dispatch(addMaterial(materialNameObj))
     }
   });
 
-  const pressAdd = ({quantity}) => {
-    const materialNameObj = {
-      name: materialObj.materialName,
-      quantitiy: quantity,
 
-    }
-    dispatch(addMaterial(materialNameObj))
-  }
 
   const pressRemove = () => {
-    dispatch(removeMaterial(materialObj.materialName))
+    dispatch(removeMaterial(materialObj))
   }
 
 
@@ -42,7 +39,7 @@ const IndividualMaterialButton = ({materialObj}) => {
       <div>
           <label htmlFor="quantity">{materialObj.name}</label>
           <form onSubmit={formik.handleSubmit}>
-          <input id="quantity" name="quantity" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.quantity}/>
+          <input id="quantity" name="quantity" type="number" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.quantity}/>
           {
             formik.touched.quantity && formik.errors.quantity
               ? <em>{formik.errors.quantity} </em>
@@ -50,7 +47,6 @@ const IndividualMaterialButton = ({materialObj}) => {
             }
           {materialObj.unit}
           <button type="submit">Add</button>
-          <button onClick={pressRemove}>remove</button>
           </form>
       </div>
     </div>

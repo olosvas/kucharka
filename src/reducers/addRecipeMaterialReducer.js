@@ -5,24 +5,28 @@ const addRecipeMaterialReducer = (state = [], action) => {
       console.log("stateWithNewMaterial from reducer is - ", stateWithNewMaterial)
       return stateWithNewMaterial
     case 'REMOVE_MATERIAL':
-      const newState = state.filter(material => material !== action.data);
+      const newState = state.filter(materialObj => {
+        console.log("materialObj is ",materialObj)
+        console.log("materialObj is ",materialObj)
+        return materialObj.name.toLowerCase() !== action.data.name.toLowerCase()
+      });
       return newState
   default:
     return state
   }
 }
 
-export const addMaterial = material => {
+export const addMaterial = materialObj => {
   return {
     type: 'ADD_MATERIAL',
-    data: material,
+    data: materialObj,
   }
 }
 
-export const removeMaterial = material => {
+export const removeMaterial = materialObj => {
   return {
     type: 'REMOVE_MATERIAL',
-    data: material,
+    data: materialObj,
   }
 }
 
