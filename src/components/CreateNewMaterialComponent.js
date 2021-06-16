@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import materialService from '../services/materialService'
 
 const CreateNewMaterialComponent = () => {
   const [pressed, setPressed] = useState(false)
@@ -10,13 +11,12 @@ const CreateNewMaterialComponent = () => {
       unit: ''
     },
     validationSchema: Yup.object({
-      username: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-      password: Yup.string().max(20, 'Must be 20 characters or less').required('Required')
+      name: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
+      unit: Yup.string().max(20, 'Must be 20 characters or less').required('Required')
     }),
-    onSubmit: async (values) => {
-      //values = { username: "as", password: "as" }
-      console.log(values)
-      
+    onSubmit: (values) => {
+      console.log("values are - ",values)
+      materialService.create(values)
     }
   });
 
@@ -33,7 +33,7 @@ const CreateNewMaterialComponent = () => {
             }
           </div>
           <div>
-            <label htmlFor="unit">unit</label>
+            <label htmlFor="unit">Unit</label>
             <input id="unit" name="unit" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.unit}/> {
               formik.touched.unit && formik.errors.unit
                 ? (<div>{formik.errors.unit}</div>)
@@ -41,7 +41,7 @@ const CreateNewMaterialComponent = () => {
             }
           </div>
           <div>
-            <button type="submit">Create new material</button>
+            <button type="submit">Submit new material</button>
           </div>
         </form>
       </div>

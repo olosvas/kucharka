@@ -59,6 +59,7 @@ const App = () => {
         dispatch(getTags(uniqueTags))
       })
   }, [])
+  
 /*
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')

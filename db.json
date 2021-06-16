@@ -99,20 +99,34 @@
   ],
   "materials": [
     {
-      "id": "609d75a0937e9653008187ca",
-      "name": "Zeler"
+      "name": "Zeler",
+      "unit": "kg",
+      "id": 1
     },
     {
-      "id": "609d7620937e9653008187cb",
-      "name": "Mrkva"
+      "name": "Mrkva",
+      "unit": "ks",
+      "id": 2
     },
     {
-      "id": "609d7703a251b4521ccb20eb",
-      "name": "Zemiak"
+      "name": "Zemiak",
+      "unit": "kg",
+      "id": 3
     },
     {
-      "id": "60a109cfcf30865be86ae3f4",
-      "name": "miska"
+      "name": "miska",
+      "unit": "ks",
+      "id": 4
+    },
+    {
+      "name": "mlieko",
+      "unit": "l",
+      "id": 5
+    },
+    {
+      "name": "xx",
+      "unit": "cc",
+      "id": 6
     }
   ]
 }
