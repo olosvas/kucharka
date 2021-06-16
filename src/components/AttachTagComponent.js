@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTags } from '../reducers/tagReducer'
 import tagService from '../services/tagService'
+import { setTagsForRecipe } from '../reducers/tagsForRecipeReducer'
 
 const AttachTagComponent = () => {
   const dispatch = useDispatch()
@@ -18,10 +19,11 @@ const AttachTagComponent = () => {
       const newTagArr = tagArr.filter(x => {return x !== tag})
       console.log("tagArr IF is", tagArr)
       setTagArr(newTagArr)
-      dispatch()
+      dispatch(setTagsForRecipe(newTagArr))
     }else{
-      setTagArr([...tagArr, tag])
-      dispatch()
+      const arr = [...tagArr, tag]
+      setTagArr(arr)
+      dispatch(setTagsForRecipe(arr))
     }
 
   }

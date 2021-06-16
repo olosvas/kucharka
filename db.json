@@ -28,7 +28,8 @@
       "id": 1,
       "name": "jeden",
       "author": "author2",
-      "tags": ["cat1"
+      "tags": [
+        "cat1"
       ],
       "steps": [
         {
@@ -49,7 +50,9 @@
       "id": 2,
       "name": "dva",
       "author": "author3",
-      "tags": [ "cat2","cat4"
+      "tags": [
+        "cat2",
+        "cat4"
       ],
       "steps": [
         {
@@ -71,7 +74,8 @@
       "name": "tri",
       "author": "author4",
       "tags": [
-        "cat4","cat6"
+        "cat4",
+        "cat6"
       ],
       "steps": [
         {
@@ -87,6 +91,40 @@
           "text": "postup"
         }
       ]
+    },
+    {
+      "name": "Nazov",
+      "author": "adam",
+      "steps": [
+        {
+          "title": "Step1nazov",
+          "content": "Step1text",
+          "id": 0
+        },
+        {
+          "title": "Step2text",
+          "content": "Step2text",
+          "id": 1
+        }
+      ],
+      "materials": [
+        {
+          "name": "Mrkva",
+          "quantity": 5,
+          "unit": "ks"
+        },
+        {
+          "name": "miska",
+          "quantity": 6,
+          "unit": "ks"
+        }
+      ],
+      "tags": [
+        "cat1",
+        "cat2",
+        "cat3"
+      ],
+      "id": 4
     }
   ],
   "materials": [
@@ -121,5 +159,12 @@
       "id": 6
     }
   ],
-  "categories": ["cat1","cat2","cat3","cat4","cat5","cat6"]
+  "categories": [
+    "cat1",
+    "cat2",
+    "cat3",
+    "cat4",
+    "cat5",
+    "cat6"
+  ]
 }
