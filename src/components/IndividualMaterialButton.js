@@ -2,25 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTag, removeTag } from '../reducers/tagFilterReducer'
 import { addMaterial, removeMaterial} from '../reducers/addRecipeMaterialReducer'
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 
 const IndividualMaterialButton = ({materialName}) => {
   const dispatch = useDispatch()
 
   const pressAdd = () => {
+
     dispatch(addMaterial(materialName))
   }
 
   const pressRemove = () => {
     dispatch(removeMaterial(materialName))
   }
-
-/*
-  useEffect(() => {
-    if(pressed){
-      dispatch(addTag(tag))
-    } else (dispatch(removeTag(tag)))
-  }, [pressed])
-  */
 
 
   return(
