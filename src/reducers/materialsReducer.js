@@ -2,19 +2,28 @@ const initialMaterials = [
     {
       id: "609d75a0937e9653008187ca",
       name: "Zeler",
+      unit: 'kg'
     },
     {
       id: "609d7620937e9653008187cb",
-      name: "Mrkva"
+      name: "Mrkva",
+      unit: 'ks'
     },
     {
       id: "609d7703a251b4521ccb20eb",
-      name: "Zemiak"
+      name: "Zemiak",
+      unit: 'kg'
     },
     {
       id: "60a109cfcf30865be86ae3f4",
-      name: "miska"
-    }
+      name: "miska",
+      unit: 'ks'
+    },
+    {
+      id: "60a109cfcf30865be86af5r8",
+      name: "mlieko",
+      unit: 'l'
+    },
   ]
 
 

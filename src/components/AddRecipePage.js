@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import Material from './Material'
+import MaterialSelection from './MaterialSelection'
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import Step from './Step';
@@ -63,6 +63,9 @@ const AddRecipePage = () => {
       </form>
     </div>
     <div>
+      <MaterialSelection />
+    </div>
+    <div>
       <ul>
         {steps.map(step =>
           <div key={step.id}>
@@ -75,6 +78,7 @@ const AddRecipePage = () => {
     </div>
 
     <div><button onClick={addNewStep}>New Step</button></div>
+
   </div>)
 }
 export default AddRecipePage

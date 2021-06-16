@@ -109,7 +109,7 @@ const App = () => {
 
       <div>
         <br />
-        <em>Note app, Department of Computer Science 2021</em>
+        <em>CookBook, BCAA 019</em>
       </div>
     </div>
   )

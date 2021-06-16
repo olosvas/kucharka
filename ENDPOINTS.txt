@@ -1,0 +1,15 @@
+1.
+array objektov {nazov: , autor:}
+
+2.
+vsetky objekty materialov v array
+
+3.
+array stringov vsetkych tagov
+
+4.
+POST na kreaciu receptu
+ID v response
+
+5.
+POST na delete receptu
