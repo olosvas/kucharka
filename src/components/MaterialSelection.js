@@ -6,9 +6,8 @@ import IndividualMaterialButton from './IndividualMaterialButton'
 const MaterialSelection = () => {
   const materialsToSelect = useSelector(state => state.materials)
   const currentMaterials = useSelector(state => state.addRecipeMaterials)
-  const materialNames = materialsToSelect.map(materialObj => materialObj.name)
 
-  console.log("materialNames is ",materialNames)
+  console.log("materialNames is ",materialsToSelect)
   console.log("currentMaterials is ",currentMaterials)
 /*
 <ul>
@@ -24,8 +23,8 @@ const MaterialSelection = () => {
     <div>
       <div>
         <ul>
-          {materialNames.map(materialName =>
-            <li> <IndividualMaterialButton materialName={materialName}/></li>
+          {materialsToSelect.map(materialObj =>
+            <li> <IndividualMaterialButton materialObj={materialObj}/></li>
             )
           }
         </ul>
