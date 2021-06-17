@@ -1,2 +1,2 @@
-import CallToAction from "./CallToAction";
-export default CallToAction;
+import Cube from "./Cube";
+export default Cube;
