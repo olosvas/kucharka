@@ -107,7 +107,7 @@ const App = () => {
           <AddRecipePage />
         </Route>
         <Route path="/recipes/:id">
-          <RecipeFull recipe={recipe} />
+          <RecipeFull recipeProp={recipe} />
         </Route>
         <Route path="/">
           <RecipeGrid />

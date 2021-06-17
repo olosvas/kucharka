@@ -12,6 +12,11 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
+const getOne = (id) => {
+  const request = axios.get(`${baseUrl}/${id}`)
+  return request.then(response => response.data)
+}
+
 const create = (newObject) => {
   /*
   const config = {
@@ -32,5 +37,5 @@ const deleteRecipe = (id) => {
 
 
 export default {
-  getAll, create, deleteRecipe
+  getAll, create, deleteRecipe, getOne
 }

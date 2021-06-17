@@ -1,11 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useRouteMatch } from 'react-router-dom'
 import recipeService from '../services/recipeService'
 
 
 
-const RecipeFull = ({ recipe }) => {
-  console.log('recipe props from RecipeFull - ', recipe)
+const RecipeFull = ({ recipeProp }) => {
+console.log("reipe prop is: ", recipeProp)
+const [recipe, setRecipe] = useState({name: "loading", author: "loading", steps: ["loading"]})
+
+  console.log('recipe state from RecipeFull - ', recipe)
+let match = useRouteMatch()
+console.log("match is: ", match)
+
+useEffect(()=>{
+
+recipeService.getOne(match.id).then(recipe => {
+    setRecipe(recipe)
+    console.log('recipe from hook is - ', recipe)
+
+  })
+},[])
+
+
+
 
 const removeRecipe = (recipeToRemove) => {
  console.log("recipe to remove is: ", recipeToRemove)

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useFormik} from 'formik';
+import {useFormik, resetForm} from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux'
 import { editStep } from '../reducers/stepReducer'
@@ -22,6 +22,7 @@ const Step = ({id}) => {
         ...values,
         id: id
       }
+      //resetForm()
       dispatch(editStep(submitObj))
     }
   });
