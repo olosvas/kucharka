@@ -5,21 +5,20 @@ import recipeService from '../services/recipeService'
 
 
 const RecipeFull = ({ recipeProp }) => {
-console.log("reipe prop is: ", recipeProp)
-const [recipe, setRecipe] = useState({name: "loading", author: "loading", steps: ["loading"]})
+  console.log("reipe prop is: ", recipeProp)
+  const [recipe, setRecipe] = useState({name: "loading", author: "loading", steps: [{0:"loading"}]})
 
   console.log('recipe state from RecipeFull - ', recipe)
-let match = useRouteMatch()
-console.log("match is: ", match)
+  let match = useRouteMatch()
 
-useEffect(()=>{
-
-recipeService.getOne(match.id).then(recipe => {
-    setRecipe(recipe)
-    console.log('recipe from hook is - ', recipe)
-
-  })
-},[])
+  useEffect(()=>{
+    recipeService
+      .getOne(match.url.split('/')[2])
+      .then(recipe => {
+        setRecipe(recipe)
+        console.log('recipe from hook is - ', recipe)
+      })
+  },[])
 
 
 

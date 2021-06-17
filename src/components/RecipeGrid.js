@@ -60,7 +60,7 @@ const RecipeGrid = () => {
         {recipesToShow.map(recipe =>
           <div key={recipe.id}>
             <li>
-              <Link to={`/recipes/${recipe.id}`}>
+              <Link to={`/recipe/${recipe.id}`}>
                 <Cube recipe1={recipe}/>
               </Link>
             </li>

@@ -78,7 +78,7 @@ const App = () => {
 
   const recipes = useSelector(state => state.recipes)
 
-  const match = useRouteMatch('/recipes/:id')
+  const match = useRouteMatch('/recipe/:id')
   const recipe = match
     ? recipes.find(recipe => recipe.id === match.params.id)
     : null
@@ -106,7 +106,7 @@ const App = () => {
         <Route path="/AddRecipe">
           <AddRecipePage />
         </Route>
-        <Route path="/recipes/:id">
+        <Route path="/recipe/:id">
           <RecipeFull recipeProp={recipe} />
         </Route>
         <Route path="/">
