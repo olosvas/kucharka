@@ -29,6 +29,12 @@ const update = (id, newObject) => {
   return request.then(response => response.data)
 }
 
+const deleteRecipe = (id) => {
+  const request = axios.delete(`${baseUrl}/${id}`)
+  return request.then(response => response.data)
+}
+
+
 export default {
-  getAll, create, update, setToken
+  getAll, create, update, setToken, deleteRecipe
 }

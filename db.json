@@ -1,30 +1,6 @@
 {
   "recipes": [
     {
-      "id": 0,
-      "name": "nula",
-      "author": "author1",
-      "tags": [
-        "cat1",
-        "cat2",
-        "cat3"
-      ],
-      "steps": [
-        {
-          "id": 1,
-          "title": "step1title",
-          "image": "www.link.com",
-          "text": "postup"
-        },
-        {
-          "id": 2,
-          "title": "step2title",
-          "image": "www.link.com",
-          "text": "postup"
-        }
-      ]
-    },
-    {
       "id": 1,
       "name": "jeden",
       "author": "author2",
