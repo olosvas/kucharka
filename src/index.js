@@ -80,7 +80,7 @@ const App = () => {
 
   const match = useRouteMatch('/recipes/:id')
   const recipe = match
-    ? recipes.find(recipe => recipe.id === Number(match.params.id))
+    ? recipes.find(recipe => recipe.id === match.params.id)
     : null
 
 

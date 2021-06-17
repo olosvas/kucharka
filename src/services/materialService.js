@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/materials'
+const baseUrl = 'https://unicorn-cook-book-19.herokuapp.com/material'
 
 
 const getAll = () => {

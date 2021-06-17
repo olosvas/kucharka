@@ -1,4 +1,4 @@
-const initialTags = []
+const initialTags = ["Salads", "Soups", "Gluten-free", "Vegan", "Deserts"]
 
 const tagReducer = (state = initialTags, action) => {
   switch (action.type) {

@@ -1,12 +1,12 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/recipes'
-
+const baseUrl = 'https://unicorn-cook-book-19.herokuapp.com/recipe'
+/*
 let token = null
 
 const setToken = newToken => {
   token = `bearer ${newToken}`
 }
-
+*/
 const getAll = () => {
   const request = axios.get(baseUrl)
   return request.then(response => response.data)
@@ -24,10 +24,6 @@ const create = (newObject) => {
   return request.then(response => response.data)
 }
 
-const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
-  return request.then(response => response.data)
-}
 
 const deleteRecipe = (id) => {
   const request = axios.delete(`${baseUrl}/${id}`)
@@ -36,5 +32,5 @@ const deleteRecipe = (id) => {
 
 
 export default {
-  getAll, create, update, setToken, deleteRecipe
+  getAll, create, deleteRecipe
 }

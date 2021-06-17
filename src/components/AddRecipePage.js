@@ -8,6 +8,7 @@ import Step from './Step';
 import { addStep } from '../reducers/stepReducer'
 import recipeService from '../services/recipeService';
 import {addRecipe} from '../reducers/recipeReducer'
+import {useHistory} from 'react-router-dom'
 
 
 const AddRecipePage = () => {
@@ -16,6 +17,7 @@ const AddRecipePage = () => {
   const user = useSelector(state => state.user)
   const recipeMaterials = useSelector(state => state.addRecipeMaterials)
   const tagsForRecipe = useSelector(state => state.tagsForRecipe)
+  const history = useHistory()
 
   const formik = useFormik({
     initialValues: {
@@ -33,6 +35,7 @@ const AddRecipePage = () => {
   const finalSubmit = ({mainTitle}) => {
     console.log('MainTitle from addRecipePage is - ', mainTitle)
     console.log('steps from addRecipePage is - ', steps)
+
     const finalObject = {
       name: mainTitle,
       author: user,
@@ -42,7 +45,9 @@ const AddRecipePage = () => {
     }
     console.log("finalObject is", finalObject)
     recipeService.create(finalObject).then(res =>
-      console.log("response form finalObject submit is- ", res))
+      {history.push("/")
+      console.log("response form finalObject submit is- ", res)})
+
   }
 
   const addNewStep = () => {

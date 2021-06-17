@@ -19,9 +19,11 @@ const RecipeGrid = () => {
         console.log('useEffect in grid runs')
         dispatch(setRecipes(initialRecipes))
       })
+    /*
     tagService.getAllCategories().then(allCategoriesArr =>
       dispatch(setTags(allCategoriesArr))
       )
+      */
   }, [])
 
   const recipes = useSelector(state => state.recipes)

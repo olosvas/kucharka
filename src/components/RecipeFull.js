@@ -9,7 +9,7 @@ const RecipeFull = ({ recipe }) => {
 
 const removeRecipe = (recipeToRemove) => {
  console.log("recipe to remove is: ", recipeToRemove)
- recipeService.deleteRecipe(recipeToRemove.id)
+ recipeService.deleteRecipe(recipeToRemove.name.toLowerCase())
 
 }
 
