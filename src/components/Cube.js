@@ -1,5 +1,6 @@
 import React from 'react'
-/*eslint linebreak-style: ["error", "windows"]*/
+
+
 const Cube = ({ recipe1 }) => {
   const recipe = recipe1
 
