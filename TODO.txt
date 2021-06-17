@@ -1,0 +1,17 @@
+TODO:
+
+- OLIVER refresh on recipe specific url doesent work - useEffect doesent run
+- optional ADAM useHistory after adding recipe
+- OLIVER connect to real backend
+- OLIVER check over YUP validation
+- OLIVER create if condition to chcek if steps are empty strings
+
+/recipe  => vyppise vsechny recepty
+
+    GET /recipe => vypise vsechny materialy
+
+    GET /recipe/:id(name) => vypise jeden recept podle id (name.toLowerCase())
+
+    POST /recipe => ulozi data, pokud existuje, tak je prepise. Musi byt vlastnost 'name' jinak status code 400
+
+    DELETE /recipe/:id => odstrani recept, pokud neexistue bude status 404

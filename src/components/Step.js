@@ -18,11 +18,13 @@ const Step = ({id}) => {
     }),
     onSubmit: (values) => {
       //values = { username: "as", password: "as" }
+
       const submitObj = {
         ...values,
         id: id
       }
       dispatch(editStep(submitObj))
+
     }
   });
 

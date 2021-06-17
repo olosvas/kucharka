@@ -6,6 +6,7 @@ import RecipeFull from './components/RecipeFull'
 import AddRecipePage from './components/AddRecipePage'
 import Login from './components/Login'
 import recipeService from './services/recipeService';
+import './index.css';
 
 //cototjeje
 import {

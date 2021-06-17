@@ -59,7 +59,8 @@ const AddRecipePage = () => {
       <form onSubmit={formik.handleSubmit}>
         <div>
           <label htmlFor="mainTitle">Title</label>
-          <input id="mainTitle" name="mainTitle" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mainTitle}/> {
+          <input id="mainTitle" name="mainTitle" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mainTitle}/>
+          {
             formik.touched.mainTitle && formik.errors.mainTitle
               ? (<div>{formik.errors.mainTitle}</div>)
               : null
