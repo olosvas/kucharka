@@ -13,8 +13,8 @@ const FilterComponent = () => {
 
 
   return (
-    <div>
-      <input onChange={handleChange}/>
+    <div className= "mb-3 mt-5">
+      <input className="input is-medium pb-2*" onChange={handleChange} placeholder="Find your recipe"/>
     </div>
   )
 }

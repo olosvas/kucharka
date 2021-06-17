@@ -6,6 +6,8 @@ import RecipeFull from './components/RecipeFull'
 import AddRecipePage from './components/AddRecipePage'
 import Login from './components/Login'
 import recipeService from './services/recipeService';
+import Menu from './components/Menu'
+
 
 //cototjeje
 import {
@@ -89,16 +91,8 @@ const App = () => {
   }
 
   return (
-    <div>
-      <div>
-        <div>
-          <Link style={padding} to="/">Recepies</Link>
-        </div>
-        <div>
-          <Link style={padding} to="/login">login</Link>
-        </div>
-      </div>
-
+    <div className ="container is-max-desktop">
+      <Menu/>
       <Switch>
         <Route path="/login">
           <Login />

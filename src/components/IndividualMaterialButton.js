@@ -36,17 +36,17 @@ const IndividualMaterialButton = ({materialObj}) => {
 
   return(
     <div>
-      <div>
+      <div className = "field">
           <label htmlFor="quantity">{materialObj.name}</label>
           <form onSubmit={formik.handleSubmit}>
-          <input id="quantity" name="quantity" type="number" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.quantity}/>
+          <input className="input is-rounded is-small" id="quantity" name="quantity" type="number" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.quantity}/>
           {
             formik.touched.quantity && formik.errors.quantity
               ? <em>{formik.errors.quantity} </em>
               : null
             }
           {materialObj.unit}
-          <button type="submit">Add</button>
+          <button className ="button is-small"type="submit">Add</button>
           </form>
       </div>
     </div>

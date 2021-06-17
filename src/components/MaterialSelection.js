@@ -21,13 +21,15 @@ const MaterialSelection = () => {
         <MaterialFilterComponent />
       </div>
       <div>
-        <ul>
+        <ul className = "mt-3">
         {currentMaterials.map(currentMaterial =>
           <li>
             {currentMaterial.name}
             {currentMaterial.quantity}
             {currentMaterial.unit}
-            <button onClick={() => pressRemove(currentMaterial)}>Remove</button>
+
+
+            <button className = "button is-danger is-small ml-2" onClick={() => pressRemove(currentMaterial)}>Remove</button>
           </li>
           )
         }

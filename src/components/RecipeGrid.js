@@ -8,6 +8,8 @@ import recipeService from '../services/recipeService';
 import tagService from '../services/tagService';
 import {setRecipes} from '../reducers/recipeReducer';
 import {setTags} from '../reducers/tagReducer'
+import NewCard from './NewCard'
+
 
 const RecipeGrid = () => {
   const dispatch = useDispatch()
@@ -51,22 +53,21 @@ const RecipeGrid = () => {
 
   return (
     <div>
-      <h2>Recipes</h2>
       <div><FilterComponent/></div>
-      <div>
-        <TagButtons />
+      <div className="main">
+        <div>
+        <TagButtons className = ""/>
+        </div>
       </div>
-      <ul>
+      <div className = "cards mt-6">
         {recipesToShow.map(recipe =>
-          <div key={recipe.id}>
-            <li>
+          <div key={recipe.id} className = "cards_item">
               <Link to={`/recipe/${recipe.id}`}>
-                <Cube recipe1={recipe}/>
+                <NewCard recipe1={recipe}/>
               </Link>
-            </li>
           </div>
         )}
-      </ul>
+      </div>
     </div>
   )
 }

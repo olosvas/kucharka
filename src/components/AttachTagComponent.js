@@ -34,13 +34,14 @@ const AttachTagComponent = () => {
   return(
     <div>
       <div>
-        <ul>
           {
             allTags.map(tag=>{
-              return <li><button onClick={()=>{modifyState(tag)}}>{tag}</button></li>
+              return
+                <div>
+                  <button onClick={()=>{modifyState(tag)}}>{tag}</button>
+                </div>
             })
           }
-        </ul>
       </div>
       <div>
         <ul>

@@ -59,13 +59,13 @@ const MaterialFilterComponent = () => {
 
   return (
     <div>
-      <div>
-        <input onChange={handleChange}/>
+      <div className = "is-align-self-auto	">
+        <input className="input is-rounded is-large mb-5" placeholder="Select your material" onChange={handleChange}/>
       </div>
-      <div>
+      <div className = "mt">
       {
         filter === '' ?
-        <div> napis daco</div>
+        <div></div>
         : renderCreateNewMaterialComponent()
       }
       </div>

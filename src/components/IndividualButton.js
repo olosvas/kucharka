@@ -21,7 +21,7 @@ const IndividualButton = ({tag}) => {
   return(
     <div>
       <div>
-        <button onClick={pressButton}>{tag} is {pressed.toString()}</button>
+        <button className = "button is-medium is-fullwidth is-rounded" onClick={pressButton}>{tag} is {pressed.toString()}</button>
       </div>
     </div>
   )

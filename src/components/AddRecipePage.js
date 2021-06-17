@@ -59,18 +59,18 @@ const AddRecipePage = () => {
 
 
   return (<div>
-    <div>Create new recipe</div>
+    <div className = "mt-6 title is-5">Create new recipe</div>
     <div>
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <label htmlFor="mainTitle">Title</label>
-          <input id="mainTitle" name="mainTitle" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mainTitle}/> {
+          <label className = " title is-6" htmlFor="mainTitle">Title</label>
+          <input className = "input is-rounded" placeholder = "Add title to your recipe" id="mainTitle" name="mainTitle" type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.mainTitle}/> {
             formik.touched.mainTitle && formik.errors.mainTitle
               ? (<div>{formik.errors.mainTitle}</div>)
               : null
             }
         </div>
-        <div><button type='submit' >Submit</button></div>
+        <div className = "button_dole"><button className = "button is-medium is-fullwidth is-danger is-ligh mb-6" type='submit' >Submit</button></div>
       </form>
       <div>
         <AttachTagComponent/>

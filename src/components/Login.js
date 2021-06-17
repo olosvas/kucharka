@@ -92,7 +92,7 @@ const LoginForm = () => {
             <p>{user.name}
               logged-in</p>
             <div>
-              <div>login options</div>
+              <div className = "title is-4">login options</div>
               <Link to="/AddRecipe">Create new </Link>
             </div>
           </div>

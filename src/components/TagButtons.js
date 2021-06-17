@@ -7,16 +7,14 @@ const TagButtons = () => {
 
   //key prop needs to be added
   return(
-    <div>
-      <div>
-        <ul>
+
+      <div className = "columns is-mobile">
           {tags.map(tag =>
-            <li> <IndividualButton tag={tag}/></li>
+            <div  className = "column"> <IndividualButton tag={tag}/></div>
             )
           }
-        </ul>
       </div>
-    </div>
+
   )
 }
 
